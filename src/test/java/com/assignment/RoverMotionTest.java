@@ -13,4 +13,10 @@ public class RoverMotionTest {
         assertEquals("1 3 N",new Rover(1,2,"N").mooveRover("M"));
     }
 
+    @Test
+    @DisplayName("Rover should turn left")
+    void should_turn_left(){
+        assertEquals("1 3 N",new Rover(1,3,"E").mooveRover("L"));
+    }
+
 }

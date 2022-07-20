@@ -13,6 +13,8 @@ public class Rover {
         for (char nextStep : motion.toCharArray()) {
             if (nextStep == 'M') {
                   roverPosition.moove();
+            }else if (nextStep == 'L') {
+                roverPosition.mooveLeft();
             }
         }
         return roverPosition.currentPosition();

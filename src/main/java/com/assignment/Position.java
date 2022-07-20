@@ -31,14 +31,35 @@ public class Position {
             return "W";
         } else if (dirX == 0 && dirY == 1) {
             return "N";
-        } else {
-            return "S";
         }
+
+        return "S";
     }
 
     public void moove(){
         posX += dirX;
         posY += dirY;
+    }
+
+    public void mooveLeft(){
+            switch (getDirection()) {
+                case "E":
+                    dirX = 0;
+                    dirY = 1;
+                    break;
+                case "W":
+                    dirX = 0;
+                    dirY = -1;
+                    break;
+                case "N":
+                    dirX = -1;
+                    dirY = 0;
+                    break;
+                case "S":
+                    dirX = 1;
+                    dirY = 0;
+                    break;
+            }
     }
 
     public String currentPosition(){
