@@ -15,6 +15,8 @@ public class Rover {
                   roverPosition.moove();
             }else if (nextStep == 'L') {
                 roverPosition.mooveLeft();
+            }else{
+                roverPosition.mooveRight();
             }
         }
         return roverPosition.currentPosition();

@@ -62,6 +62,27 @@ public class Position {
             }
     }
 
+    public void mooveRight(){
+        switch (getDirection()) {
+            case "E":
+                dirX = 0;
+                dirY = -1;
+                break;
+            case "W":
+                dirX = 0;
+                dirY = 1;
+                break;
+            case "N":
+                dirX = 1;
+                dirY = 0;
+                break;
+            case "S":
+                dirX = -1;
+                dirY = 0;
+                break;
+        }
+    }
+
     public String currentPosition(){
         return String.valueOf(posX)+" "+String.valueOf(posY)+" "+getDirection();
     }
