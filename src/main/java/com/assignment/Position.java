@@ -3,6 +3,7 @@ package com.assignment;
 public class Position {
     private int posX, posY;
     private int dirX, dirY;
+
     Position(int posX, int posY, String dir) {
         this.posX = posX;
         this.posY = posY;
@@ -36,33 +37,33 @@ public class Position {
         return "S";
     }
 
-    public void moove(){
+    public void moove() {
         posX += dirX;
         posY += dirY;
     }
 
-    public void mooveLeft(){
-            switch (getDirection()) {
-                case "E":
-                    dirX = 0;
-                    dirY = 1;
-                    break;
-                case "W":
-                    dirX = 0;
-                    dirY = -1;
-                    break;
-                case "N":
-                    dirX = -1;
-                    dirY = 0;
-                    break;
-                case "S":
-                    dirX = 1;
-                    dirY = 0;
-                    break;
-            }
+    public void mooveLeft() {
+        switch (getDirection()) {
+            case "E":
+                dirX = 0;
+                dirY = 1;
+                break;
+            case "W":
+                dirX = 0;
+                dirY = -1;
+                break;
+            case "N":
+                dirX = -1;
+                dirY = 0;
+                break;
+            case "S":
+                dirX = 1;
+                dirY = 0;
+                break;
+        }
     }
 
-    public void mooveRight(){
+    public void mooveRight() {
         switch (getDirection()) {
             case "E":
                 dirX = 0;
@@ -83,7 +84,7 @@ public class Position {
         }
     }
 
-    public String currentPosition(){
-        return String.valueOf(posX)+" "+String.valueOf(posY)+" "+getDirection();
+    public String currentPosition() {
+        return String.valueOf(posX) + " " + String.valueOf(posY) + " " + getDirection();
     }
 }
