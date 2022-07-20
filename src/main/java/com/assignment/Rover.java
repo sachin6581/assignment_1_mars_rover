@@ -4,19 +4,19 @@ public class Rover {
 
     private final Position roverPosition;
 
-    Rover(int posX, int posY, String dir) {
-        this.roverPosition = new Position(posX, posY, dir);
+    Rover(int positionX, int positionY, String direction) {
+        this.roverPosition = new Position(positionX, positionY, direction);
     }
 
-    public String mooveRover(String motion) {
-
+    public String moveRover(String motion) {
+        roverPosition.setDirection();
         for (char nextStep : motion.toCharArray()) {
             if (nextStep == 'M') {
-                roverPosition.moove();
+                roverPosition.move();
             } else if (nextStep == 'L') {
-                roverPosition.mooveLeft();
+                roverPosition.moveLeft();
             } else if (nextStep == 'R') {
-                roverPosition.mooveRight();
+                roverPosition.moveRight();
             }
         }
         return roverPosition.currentPosition();

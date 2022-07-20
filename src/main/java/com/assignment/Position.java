@@ -1,90 +1,96 @@
 package com.assignment;
 
 public class Position {
-    private int posX, posY;
-    private int dirX, dirY;
+    private int positionX, positionY;
+    private int directionX, directionY;
+    private final String direction;
 
     Position(int posX, int posY, String dir) {
-        this.posX = posX;
-        this.posY = posY;
-        setDirection(dir);
+        this.positionX = posX;
+        this.positionY = posY;
+        this.direction = dir;
     }
 
-    private void setDirection(String dir) {
-        if (dir.equals("E")) {
-            dirX = 1;
-            dirY = 0;
-        } else if (dir.equals("W")) {
-            dirX = -1;
-            dirY = 0;
-        } else if (dir.equals("N")) {
-            dirX = 0;
-            dirY = 1;
-        } else {
-            dirX = 0;
-            dirY = -1;
+    public void setDirection() {
+        switch (direction) {
+            case "E" -> {
+                directionX = 1;
+                directionY = 0;
+            }
+            case "W" -> {
+                directionX = -1;
+                directionY = 0;
+            }
+            case "N" -> {
+                directionX = 0;
+                directionY = 1;
+            }
+            default -> {
+                directionX = 0;
+                directionY = -1;
+            }
         }
     }
 
     public String getDirection() {
-        if (dirX == 1 && dirY == 0) return "E";
-        else if (dirX == -1 && dirY == 0) {
+        if (directionX == 1 && directionY == 0) return "E";
+        else if (directionX == -1 && directionY == 0) {
             return "W";
-        } else if (dirX == 0 && dirY == 1) {
+        } else if (directionX == 0 && directionY == 1) {
             return "N";
         }
 
         return "S";
     }
 
-    public void moove() {
-        posX += dirX;
-        posY += dirY;
+    public void move() {
+        positionX += directionX;
+        positionY += directionY;
     }
 
-    public void mooveLeft() {
+    public void moveLeft() {
         switch (getDirection()) {
             case "E":
-                dirX = 0;
-                dirY = 1;
+                directionX = 0;
+                directionY = 1;
                 break;
             case "W":
-                dirX = 0;
-                dirY = -1;
+                directionX = 0;
+                directionY = -1;
                 break;
             case "N":
-                dirX = -1;
-                dirY = 0;
+                directionX = -1;
+                directionY = 0;
                 break;
             case "S":
-                dirX = 1;
-                dirY = 0;
+                directionX = 1;
+                directionY = 0;
                 break;
         }
     }
 
-    public void mooveRight() {
+    public void moveRight() {
         switch (getDirection()) {
             case "E":
-                dirX = 0;
-                dirY = -1;
+                directionX = 0;
+                directionY = -1;
                 break;
             case "W":
-                dirX = 0;
-                dirY = 1;
+                directionX = 0;
+                directionY = 1;
                 break;
             case "N":
-                dirX = 1;
-                dirY = 0;
+                directionX = 1;
+                directionY = 0;
                 break;
             case "S":
-                dirX = -1;
-                dirY = 0;
+                directionX = -1;
+                directionY = 0;
                 break;
         }
     }
 
     public String currentPosition() {
-        return String.valueOf(posX) + " " + String.valueOf(posY) + " " + getDirection();
+        return String.valueOf(positionX) + " " + String.valueOf(positionY) + " " + getDirection();
     }
 }

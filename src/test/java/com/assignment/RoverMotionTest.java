@@ -6,36 +6,40 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RoverMotionTest {
-
     @Test
-    @DisplayName("Rover should moove forward")
-    void forward_movement() {
-        assertEquals("1 3 N", new Rover(1, 2, "N").mooveRover("M"));
+    void roverShouldMoveForward() {
+        Rover rover = new Rover(1, 2, "N");
+        String actualMovement = rover.moveRover("M");
+        assertEquals("1 3 N", actualMovement);
     }
 
     @Test
-    @DisplayName("Rover should turn left")
-    void should_turn_left() {
-        assertEquals("1 3 N", new Rover(1, 3, "E").mooveRover("L"));
+    void roverShouldTurnLeft() {
+        Rover rover = new Rover(1, 3, "E");
+        String actualMovement = rover.moveRover("L");
+        assertEquals("1 3 N", actualMovement);
 
     }
 
     @Test
-    @DisplayName("Rover should turn right")
-    void should_turn_right() {
-        assertEquals("1 3 N", new Rover(1, 3, "W").mooveRover("R"));
+    void roverShouldTurnRight() {
+        Rover rover = new Rover(1, 3, "W");
+        String actualMovement = rover.moveRover("R");
+        assertEquals("1 3 N", actualMovement);
     }
 
     @Test
-    @DisplayName("Test Case 1")
-    void should_be_1_3_N() {
-        assertEquals("1 3 N", new Rover(1, 2, "N").mooveRover("LMLMLMLMM"));
+    void roverPositionShouldBe13N() {
+        Rover rover = new Rover(1, 2, "N");
+        String actualMovement = rover.moveRover("LMLMLMLMM");
+        assertEquals("1 3 N", actualMovement);
     }
 
     @Test
-    @DisplayName("Test Case 2")
-    void should_be_5_1_E() {
-        assertEquals("5 1 E", new Rover(3, 3, "E").mooveRover("MMRMMRMRRM"));
+    void roverPositionShouldBe51E() {
+        Rover rover = new Rover(3, 3, "E");
+        String actualMovement = rover.moveRover("MMRMMRMRRM");
+        assertEquals("5 1 E", actualMovement);
     }
 
 }
