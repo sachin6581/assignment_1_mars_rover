@@ -1,16 +1,11 @@
 package exercise_3;
 
 public enum Unit {
-    MM(Constants.MILLI_TO_MILLI, Type.LENGTH),
-    CM(Constants.CENTI_TO_MILLI, Type.LENGTH),
-    M(Constants.ST_TO_MILLI, Type.LENGTH),
-    KM(Constants.KILO_TO_MILLI, Type.LENGTH),
+    MM(Constants.MILLI_TO_MILLI, Type.LENGTH), CM(Constants.CENTI_TO_MILLI, Type.LENGTH), M(Constants.ST_TO_MILLI, Type.LENGTH), KM(Constants.KILO_TO_MILLI, Type.LENGTH),
 
     KG(Constants.KILO_TO_MILLI, Type.WEIGHT),
 
-    F(5 / 9.0, -320 / 18.0, Type.TEMPERATURE),
-    C(1, Type.TEMPERATURE),
-    K(1, -273.15, Type.TEMPERATURE);
+    F(5 / 9.0, -320 / 18.0, Type.TEMPERATURE), C(1, Type.TEMPERATURE), K(1, -273.15, Type.TEMPERATURE);
 
     private static class Constants {
         public static final double MILLI_TO_MILLI = 1;
