@@ -1,4 +1,6 @@
-package com.assignment;
+package com.assignment.mars_rover;
+
+import com.assignment.mars_rover.Position;
 
 public class Rover {
 

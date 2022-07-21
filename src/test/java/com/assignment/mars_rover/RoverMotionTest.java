@@ -1,6 +1,6 @@
-package com.assignment;
+package com.assignment.mars_rover;
 
-import org.junit.jupiter.api.DisplayName;
+import com.assignment.mars_rover.Rover;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
